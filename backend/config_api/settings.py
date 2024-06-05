@@ -35,6 +35,10 @@ LOCAL_APPS = [
     'api.apps.ApiConfig',
 ]
 
+PACKAGE_APPS = [
+    "rest_framework",
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS += LOCAL_APPS
+INSTALLED_APPS += LOCAL_APPS + PACKAGE_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,6 +80,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config_api.wsgi.application'
 
+APPEND_SLASH = True
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
